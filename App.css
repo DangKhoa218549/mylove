@@ -1,0 +1,184 @@
+/* NỀN TỐI + CĂN GIỮA */
+.heart-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #0d0d0d;
+  overflow: hidden;
+  animation: pulse 4s infinite;
+}
+
+/* TRÁI TIM MÀU ĐỎ ROSE */
+.heart {
+  position: relative;
+  width: 220px;
+  height: 200px;
+  background-color: #d90429;
+  transform: rotate(-45deg);
+  animation: beat 1s infinite;
+}
+
+.heart::before,
+.heart::after {
+  content: "";
+  position: absolute;
+  width: 220px;
+  height: 200px;
+  background-color: #d90429;
+  border-radius: 50%;
+}
+
+.heart::before {
+  top: -110px;
+  left: 0;
+}
+
+.heart::after {
+  top: 0;
+  left: 110px;
+}
+
+/* DÒNG CHỮ "I love You" */
+.heart-text {
+  position: absolute;
+  color: white;
+  font-size: 40px;
+  font-weight: 900;
+  font-family: 'Arial', sans-serif;
+  text-align: center;
+  z-index: 2;
+  animation: textBeat 1s infinite, glow 2s infinite alternate;
+  transform-origin: center;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 
+               0 0 20px rgba(255, 255, 255, 0.6),
+               0 0 30px rgba(255, 255, 255, 0.4);
+  letter-spacing: 2px;
+  /* Căn giữa chính xác */
+  top: 43%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+}
+
+/* HIỆU ỨNG NHỊP TIM */
+@keyframes beat {
+  0%, 100% {
+    transform: rotate(-45deg) scale(1);
+  }
+  25% {
+    transform: rotate(-45deg) scale(1.05);
+  }
+  50% {
+    transform: rotate(-45deg) scale(1.1);
+  }
+  75% {
+    transform: rotate(-45deg) scale(1.05);
+  }
+}
+
+/* HIỆU ỨNG CHỮ ĐẬP THEO TIM */
+@keyframes textBeat {
+  0%, 100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+  25% {
+    transform: translate(-50%, -50%) scale(1.05);
+    opacity: 0.95;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.1);
+    opacity: 1;
+  }
+  75% {
+    transform: translate(-50%, -50%) scale(1.05);
+    opacity: 0.98;
+  }
+}
+
+/* CHỮ PHÁT SÁNG */
+@keyframes glow {
+  0% {
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 
+                 0 0 20px rgba(255, 255, 255, 0.6),
+                 0 0 30px rgba(255, 255, 255, 0.4);
+  }
+  100% {
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.9), 
+                 0 0 25px rgba(255, 255, 255, 0.7),
+                 0 0 35px rgba(255, 255, 255, 0.5);
+  }
+}
+
+/* CÁC HẠT BAY TỪ RÌA TRÁI TIM */
+.particle {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background-color: #ff758f;
+  border-radius: 50%;
+  animation: flyout 1.2s infinite;
+  opacity: 0;
+}
+
+/* VỊ TRÍ TỪNG HẠT */
+/* Gốc */
+.particle-1  { top: 42%; left: 41%; --dx: -60px; --dy: -60px; animation-delay: 0s; }
+.particle-2  { top: 42%; left: 59%; --dx: 60px;  --dy: -60px; animation-delay: 0.2s; }
+.particle-3  { top: 60%; left: 30%; --dx: -80px; --dy: 10px;  animation-delay: 0.4s; }
+.particle-4  { top: 60%; left: 70%; --dx: 80px;  --dy: 10px;  animation-delay: 0.6s; }
+.particle-5  { top: 20%; left: 50%; --dx: 0px;   --dy: -90px; animation-delay: 0.3s; }
+.particle-6  { top: 75%; left: 50%; --dx: 0px;   --dy: 90px;  animation-delay: 0.5s; }
+.particle-7  { top: 48%; left: 25%; --dx: -90px; --dy: 0px;   animation-delay: 0.6s; }
+.particle-8  { top: 48%; left: 75%; --dx: 90px;  --dy: 0px;   animation-delay: 0.7s; }
+.particle-9  { top: 70%; left: 35%; --dx: -50px; --dy: 50px;  animation-delay: 0.8s; }
+.particle-10 { top: 70%; left: 65%; --dx: 50px;  --dy: 50px;  animation-delay: 1s; }
+
+/* Bổ sung: particle-11 đến particle-30 */
+.particle-11 { top: 38%; left: 45%; --dx: -40px; --dy: -70px; animation-delay: 0.1s; }
+.particle-12 { top: 38%; left: 55%; --dx: 40px;  --dy: -70px; animation-delay: 0.25s; }
+.particle-13 { top: 65%; left: 28%; --dx: -70px; --dy: 20px;  animation-delay: 0.35s; }
+.particle-14 { top: 65%; left: 72%; --dx: 70px;  --dy: 20px;  animation-delay: 0.45s; }
+.particle-15 { top: 25%; left: 48%; --dx: -20px; --dy: -100px; animation-delay: 0.15s; }
+.particle-16 { top: 78%; left: 52%; --dx: 20px;  --dy: 100px;  animation-delay: 0.55s; }
+.particle-17 { top: 50%; left: 20%; --dx: -100px; --dy: 0px;  animation-delay: 0.5s; }
+.particle-18 { top: 50%; left: 80%; --dx: 100px;  --dy: 0px;  animation-delay: 0.2s; }
+.particle-19 { top: 72%; left: 33%; --dx: -60px; --dy: 60px;  animation-delay: 0.4s; }
+.particle-20 { top: 72%; left: 67%; --dx: 60px;  --dy: 60px;  animation-delay: 0.4s; }
+.particle-21 { top: 40%; left: 35%; --dx: -50px; --dy: -50px; animation-delay: 0.2s; }
+.particle-22 { top: 40%; left: 65%; --dx: 50px;  --dy: -50px; animation-delay: 0.4s; }
+.particle-23 { top: 62%; left: 25%; --dx: -70px; --dy: 10px;  animation-delay: 0.23s; }
+.particle-24 { top: 62%; left: 75%; --dx: 70px;  --dy: 10px;  animation-delay: 0.4s; }
+.particle-25 { top: 18%; left: 52%; --dx: 10px;  --dy: -90px; animation-delay: 0.1s; }
+.particle-26 { top: 78%; left: 48%; --dx: -10px; --dy: 90px;  animation-delay: 0.2s; }
+.particle-27 { top: 45%; left: 22%; --dx: -80px; --dy: 0px;   animation-delay: 0.7s; }
+.particle-28 { top: 45%; left: 78%; --dx: 80px;  --dy: 0px;   animation-delay: 0.23s; }
+.particle-29 { top: 68%; left: 32%; --dx: -55px; --dy: 55px;  animation-delay: 0.9s; }
+.particle-30 { top: 68%; left: 68%; --dx: 55px;  --dy: 55px;  animation-delay: 0.44s; }
+
+/* CHUYỂN ĐỘNG BAY CỦA HẠT */
+@keyframes flyout {
+  0% {
+    opacity: 1;
+    transform: translate(0, 0) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(var(--dx), var(--dy)) scale(0.3);
+  }
+}
+
+/* HIỆU ỨNG PULSE CHO NỀN */
+@keyframes pulse {
+  0% {
+    background-color: #0d0d0d;
+  }
+  50% {
+    background-color: #1a1a1a;
+  }
+  100% {
+    background-color: #0d0d0d;
+  }
+}
